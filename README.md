@@ -2,11 +2,14 @@
 Dotfile managements for 2023
 
 ## Windows apps
-* 7-Zip (Store)
+* Chrome
+* Terminal (Store)
+* Ubuntu [Store](https://www.microsoft.com/store/productId/9PN20MSR04DW)
+* 7-Zip [Store](https://apps.microsoft.com/store/detail/XPDNKVCX4QD2DC)
+* Ditto (Store)
 * BSPlayer
 * CPUZ?
 * Deluge
-* Ditto (Store)
 * FastStone
 * GPU_Temp?
 * Notepad++
