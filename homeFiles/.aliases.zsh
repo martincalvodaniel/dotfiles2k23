@@ -15,6 +15,12 @@ alias la='ls -lAh'
 
 alias d2u='dos2unix'
 
+# GIT
+alias gc="git commit -m"
+alias gcl="git clone"
+alias gf="git fetch"
+alias gs="git status"
+
 # IDEA
 alias ij='sh /opt/idea/idea-IC-223.8214.52/bin/idea.sh > /opt/idea/idea-IC-223.8214.52/bin/log/ij.log 2>&1 &'
 alias ijp='sh /opt/idea/idea-IC-223.8214.52/bin/idea.sh . > /opt/idea/idea-IC-223.8214.52/bin/log/ijp.log 2>&1 &'
@@ -22,7 +28,8 @@ alias ijp='sh /opt/idea/idea-IC-223.8214.52/bin/idea.sh . > /opt/idea/idea-IC-22
 # K8S
 alias k="kubectl"
 alias kl="k logs"
-alias kgp="k get pods"
+alias kgp="k get pod"
+alias kgd="k get deploy"
 alias kc='echo $KUBECONFIG'
 
 #AWS
@@ -39,10 +46,11 @@ alias j17="sdk use java 17.0.5-tem"
 
 #FOLDERS
 alias workspace='cd ~/workspace'
-alias dots="cd ~/workspace/martincalvodaniel/dotfiles2k22"
+alias dots="cd ~/workspace/martincalvodaniel/dotfiles2k23"
 
 alias reload="source ~/.zshrc"
-alias mongodbcompass="mongodb-compass --no-sandbox &"
+#alias mongodbcompass="mongodb-compass --no-sandbox &"
+alias mongodbcompass="mongodb-compass &"
 
 # WSL specific things
 if grep --quiet microsoft /proc/version 2>/dev/null; then
