@@ -2,7 +2,15 @@
 Dotfiles for 2023
 
 ## Installations
-
+* [01_install-common-dependencies](01_install-common-dependencies/install-common-dependencies.sh)
+* [02_configure-git](02_configure-git/configure-git.sh)
+* [03_install-zsh](03_install-zsh/install-zsh.sh)
+* [04_install-vcxsrv](04_install-vcxsrv/install-vcxsrv.sh)
+* [05_install-sdkman](05_install-sdkman/install-sdkman.zsh)
+* [install-intellij](06_other_installations/install-intellij.sh)
+* [install-docker](06_other_installations/install-docker.sh)
+* [install-kubectl](06_other_installations/install-kubectl.sh)
+* [install-aws-cli](06_other_installations/install-aws-cli.sh)
 
 ## Windows apps
 * Chrome
