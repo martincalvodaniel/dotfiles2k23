@@ -1,6 +1,8 @@
 #!/bin/zsh
 
 #UBUNTU
+alias cdw="cd ~/workspace"
+alias dots="cdw && cd martincalvodaniel/dotfiles2k23"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -16,10 +18,15 @@ alias la='ls -lAh'
 alias d2u='dos2unix'
 
 # GIT
-alias gc="git commit -m"
+alias gaa="git add -A"
+alias gb="git branch"
+alias gc="git commit"
 alias gcl="git clone"
-alias gf="git fetch"
-alias gs="git status"
+alias gf="git fetch --all -p"
+alias gps="git push"
+alias gpl="git pull --rebase --autostash"
+alias gpsf="git push --force"
+alias gs="git status -sb"
 
 # IDEA
 alias ij='sh /opt/idea/idea-IC-223.8214.52/bin/idea.sh > /opt/idea/idea-IC-223.8214.52/bin/log/ij.log 2>&1 &'
@@ -43,10 +50,6 @@ alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias j8="sdk use java 8.0.352-tem"
 alias j11="sdk use java 11.0.17-tem"
 alias j17="sdk use java 17.0.5-tem"
-
-#FOLDERS
-alias workspace='cd ~/workspace'
-alias dots="cd ~/workspace/martincalvodaniel/dotfiles2k23"
 
 alias reload="source ~/.zshrc"
 #alias mongodbcompass="mongodb-compass --no-sandbox &"
