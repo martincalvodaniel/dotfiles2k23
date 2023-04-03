@@ -2,6 +2,7 @@ sudo apt update && sudo apt install -y \
     apt-transport-https \
     ca-certificates \
     curl \
+    wget \
     gnupg-agent \
     software-properties-common \
     git \
@@ -9,4 +10,5 @@ sudo apt update && sudo apt install -y \
     tig \
     tree \
     zip unzip \
+    fzf \
     zsh

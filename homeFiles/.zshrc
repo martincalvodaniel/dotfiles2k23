@@ -49,8 +49,7 @@ HISTSIZE=5000                 # How many lines of history to keep in memory
 HISTFILE=~/.zsh_history       # Where to save history to disk
 SAVEHIST=5000                 # Number of history entries to save to disk
 setopt extended_history       # record timestamp of command in HISTFILE
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt HIST_IGNORE_ALL_DUPS   # Delete old recorded entry if new entry is a duplicate.
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
@@ -96,3 +95,31 @@ bindkey "^[[1;5D" backward-word
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+_control_h_binding() {
+    directory_to_move=$(ls | fzf)
+    cd "$directory_to_move"
+    zle reset-prompt
+}
+
+zle -N _control_h_binding
+bindkey '^h'  _control_h_binding
+
+
+_reverse_search() {
+  local selected_command=$(fc -rl 1 | awk '{$1="";print substr($0,2)}' | fzf)
+  LBUFFER=$selected_command
+}
+
+zle -N _reverse_search
+bindkey '^r' _reverse_search
+
+_kill_process() {
+  pid=$(ps -aux | fzf | awk '{print $2}')
+  kill -9 "$pid"
+}
+
+
+zle -N _kill_process
+bindkey "^k" _kill_process
