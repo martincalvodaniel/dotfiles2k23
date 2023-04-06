@@ -12,14 +12,13 @@ sudo apt update && sudo apt install -y \
 
 IDEA_PATH=/opt/idea
 
-sudo mkdir $IDEA_PATH
+sudo mkdir -p $IDEA_PATH
 sudo chown $UID:$UID $IDEA_PATH
-cd $IDEA_PATH
-echo PWD
-pwd
+cd $IDEA_PATH || exit
 
-wget https://download.jetbrains.com/idea/ideaIC-2022.3.1.tar.gz
-tar -zxf ideaIC-2022.3.1.tar.gz
-rm ideaIC-2022.3.1.tar.gz
+ideaIUVersion="${1:-2022.1}"
+wget "https://download.jetbrains.com/idea/ideaIU-$ideaIUVersion.tar.gz"
+tar -zxf "ideaIU-$ideaIUVersion.tar.gz"
+rm "ideaIC-$ideaIUVersion.tar.gz"
 
 

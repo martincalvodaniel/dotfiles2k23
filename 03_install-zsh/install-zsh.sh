@@ -13,4 +13,4 @@ antibody bundle < "$DOTS_HOME"/homeFiles/zsh_plugins > ~/.zsh_plugins.zsh
 mkdir ~/.screen && chmod 700 ~/.screen
 
 # Change default shell to zsh
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"

@@ -47,13 +47,11 @@ alias k8s-pro="aws eks update-kubeconfig --name pro"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 
 #JAVA
-alias j8="sdk use java 8.0.352-tem"
-alias j11="sdk use java 11.0.17-tem"
-alias j17="sdk use java 17.0.5-tem"
+alias j8="sdk use java 8.0.362-tem"
+alias j11="sdk use java 11.0.18-tem"
+alias j17="sdk use java 17.0.6-tem"
 
 alias reload="source ~/.zshrc"
-#alias mongodbcompass="mongodb-compass --no-sandbox &"
-alias mongodbcompass="mongodb-compass &"
 
 # WSL specific things
 if grep --quiet microsoft /proc/version 2>/dev/null; then
