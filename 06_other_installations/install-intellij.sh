@@ -16,9 +16,7 @@ sudo mkdir -p $IDEA_PATH
 sudo chown $UID:$UID $IDEA_PATH
 cd $IDEA_PATH || exit
 
-ideaIUVersion="${1:-2022.1}"
+ideaIUVersion="${1:-2023.1}"
 wget "https://download.jetbrains.com/idea/ideaIU-$ideaIUVersion.tar.gz"
-tar -zxf "ideaIU-$ideaIUVersion.tar.gz"
+tar -zxf "ideaIU-$ideaIUVersion.tar.gz" --strip-components=1 
 rm "ideaIC-$ideaIUVersion.tar.gz"
-
-
