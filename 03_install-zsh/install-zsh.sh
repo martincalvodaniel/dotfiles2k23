@@ -13,4 +13,7 @@ mkdir ~/.screen && chmod 700 ~/.screen
 chsh -s "$(which zsh)"
 
 # Link custom dotfiles
-./update-zsh.sh
+ln -s "$DOTS_HOME"/homeFiles/.aliases.zsh "$HOME"/.aliases.zsh
+ln -s "$DOTS_HOME"/homeFiles/.p10k.zsh "$HOME"/.p10k.zsh
+ln -s "$DOTS_HOME"/homeFiles/.zshrc "$HOME"/.zshrc
+ln -s "$DOTS_HOME"/homeFiles/.zshenv "$HOME"/.zshenv

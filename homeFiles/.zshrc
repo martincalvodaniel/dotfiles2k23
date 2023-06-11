@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Uncomment for debugging
+# zmodload zsh/zprof
+
 # Do not want background jobs to be at a lower priority
 unsetopt BG_NICE
 
@@ -94,8 +97,15 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk () {
+    # "metaprogramming" lol - source init if sdk currently looks like this sdk function
+    if [[ "$(which sdk | wc -l)" -le 10 ]]; then
+        unset -f sdk
+        source "$SDKMAN_DIR/bin/sdkman-init.sh"
+    fi
+    sdk "$@"
+}
 
 _control_h_binding() {
     directory_to_move=$(ll | fzf | awk '{print $10}')
@@ -110,8 +120,8 @@ _reverse_search() {
   local selected_command=$(fc -rl 1 | awk '{$1="";print substr($0,2)}' | fzf)
   LBUFFER=$selected_command
 }
-zle -N _reverse_search
-bindkey '^r' _reverse_search
+# zle -N _reverse_search
+# bindkey '^r' _reverse_search
 
 _kill_process() {
   pid=$(ps -aux | fzf | awk '{print $2}')
@@ -134,3 +144,10 @@ _select() {
     echo $selected
     BUFFER=$selected
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Uncomment for debugging
+# zprof

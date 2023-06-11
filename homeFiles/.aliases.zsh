@@ -29,7 +29,7 @@ alias gpsf="git push --force"
 alias gs="git status -sb"
 
 # IDEA
-alias ij='sh /opt/idea/bin/idea.sh > /opt/idea/bin/log/ij.log 2>&1 &'
+alias ij='sh /opt/idea/bin/idea.sh > /opt/idea/log/ij.log 2>&1 &'
 alias ijp='sh /opt/idea/bin/idea.sh . > /opt/idea/log/ijp.log 2>&1 &'
 
 # DOCKER
@@ -74,8 +74,8 @@ alias j8="sdk use java 8.0.362-tem"
 alias j11="sdk use java 11.0.18-tem"
 alias j17="sdk use java 17.0.6-tem"
 
+alias hi="echo 'Hello there!'"
 alias reload="source ~/.zshrc"
-alias update-zsh='"$DOTS_HOME"/03_install-zsh/update-zsh.sh && reload'
 
 # WSL specific things
 if grep --quiet microsoft /proc/version 2>/dev/null; then
